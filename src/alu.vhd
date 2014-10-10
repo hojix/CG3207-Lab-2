@@ -308,7 +308,7 @@ begin
 						done <= '1';	
 					end if;
 			--div, divu
-			when "10010" | "10011"=>
+			when "10010" =>
 				if state = COMBINATIONAL then
 					--denominator is negative
 					if Operand1(width-1) = '1' then
@@ -359,7 +359,36 @@ begin
 						end if;
 					end if;
 				end if;
+			--divu
+			when "10011" =>
+				if state = COMBINATIONAL then
+					numerator := Operand1;
+					denominator := Operand2;
+					quotient := (others=>'0');
+					remainder := (others=>'0');
+					count := (others=>'0');
+				else
+					count := count + 1;
+					if count=x"21" then
+						Result1_multi <= quotient;
+						Result2_multi <= remainder;
+						done <= '1';
+					else
+						remainder := remainder(width-2 downto 0) & '0';  -- shift left by 1
+						quotient := quotient(width-2 downto 0) & quotient(width-1);  -- rotate left by 1
+						numerator := numerator(width-2 downto 0) & numerator(width-1);  -- rotate left by 1
 
+						remainder(0) := numerator(0);
+
+						denom_inv := not (denominator);
+						test  := ('0' & remainder)+('0' & denom_inv)+1;
+						if test(width)='1' then
+							quotient(0) := '1';
+							remainder := test(width-1 downto 0);
+						end if;
+					end if;
+				end if;
+				
 			when "11110" => -- takes 1 cycle to execute, just returns the operands
 				if state = COMBINATIONAL then
 					Result1_multi <= Operand1;
