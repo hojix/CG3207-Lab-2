@@ -1,0 +1,25 @@
+Version 1 : Lab 2 v1.zip
+------------------------
+> First version
+
+
+
+Version 2 : Lab 2 v2.zip
+------------------------
+> Include the following code immediately following if(Clk'event and Clk = '1') then in the process MULTI_CYCLE_PROCESS (alu.vhd). 
+if Control(5)= '1' then
+    count :=(others=> '0');
+    temp_sum :=(others=> '0');
+endif;
+This will ensure that the MULTI_CYCLE_PROCESS is completely reset when reset is asserted.
+
+> In the comment in MULTI_CYCLE_PROCESS (alu.vhd), it should be "--takes 16 cycles to execute"
+
+
+
+Version 3 : Lab 2 v3.zip
+------------------------
+> Control(5) <= RESET_ALU or RESET; moved from outside to inside of the process UART_TOP, immediately following if rising_edge(CLOCK) then (from 164 to 169 in top.vhd)
+> Control(5) <= '1'; added immediately following Control(4 downto 0) <= (others=>'0'); in the process UART_TOP (line 237 of top.vhd)
+This will cause the ALU to be reset every time it has completed an operation. This will help in case there is a timeout (which doesn't and shouldn't occur in practice anyway).
+An example situation where a time-out occur is when there are unhandled multi-cycle operations (i.e., when a particular control input causes transition from COMBINATIONAL_PROCESS to MULTI_CYCLE_PROCESS, but there is no code to handle that control input in the MULTI_CYCLE_PROCESS)
