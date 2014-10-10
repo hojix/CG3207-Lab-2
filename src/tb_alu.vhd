@@ -96,116 +96,115 @@ BEGIN
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
---      wait for 100 ns;	
---		Control <= "000101";
---		Operand1 <= X"FFFFFFFF";
---		Operand2 <= X"0000001F";
---		
---		wait for 100 ns;	
---		Control <= "001101";
---		Operand1 <= X"FFFFFFFF";
---		Operand2 <= X"0000001F";
---		
---		wait for 100 ns;	
---		Control <= "001001";
---		Operand1 <= X"80000000";
---		Operand2 <= X"0000000F";
---		
---		wait for 100 ns;	
---		Control <= "001001";
---		Operand1 <= X"80000000";
---		Operand2 <= X"0000001F";
---		
---		wait for 100 ns;
---		Control <= "001110";
---		Operand1 <= X"FFFFFFFF";
---		Operand2 <= X"FFFFFFFF";
---		
---		wait for 100 ns;
---		Control <= "001110";
---		Operand1 <= X"FFFFFFFE";
---		Operand2 <= X"FFFFFFFF";
---		
---		wait for 100 ns;
---		Control <= "001110";
---		Operand1 <= X"FFFFFFFF";
---		Operand2 <= X"FFFFFFFE";
---		
---		wait for 100 ns;
---		Control <= "000111";
---		Operand1 <= X"FFFFFFFF";
---		Operand2 <= X"FFFFFFFF";
---		
---		wait for 100 ns;
---		Control <= "000111";
---		Operand1 <= X"FFFFFFFE";
---		Operand2 <= X"FFFFFFFF";
---		
---		wait for 100 ns;
---		Control <= "000111";
---		Operand1 <= X"FFFFFFFF";
---		Operand2 <= X"FFFFFFFE";
---		
---		wait for 100 ns;
---		Control <= "000111";
---		Operand1 <= X"00000001";
---		Operand2 <= X"00000000";
---		
---		wait for 100 ns;
---		Control <= "000111";
---		Operand1 <= X"00000000";
---		Operand2 <= X"00000000";
---		
---		wait for 100 ns;
---		Control <= "000111";
---		Operand1 <= X"00000000";
---		Operand2 <= X"00000001";
---		
---		wait for 100 ns;
---		Control <= "000111";
---		Operand1 <= X"FFFFFFFF";
---		Operand2 <= X"00000000";
---		
---		wait for 100 ns;
---		Control <= "000111";
---		Operand1 <= X"00000000";
---		Operand2 <= X"FFFFFFFF";
---		
---		wait for 100 ns;
---		Control <= "010000";
---		Operand1 <= X"00000002";
---		Operand2 <= X"00000003";
---		
---		wait until Status(2) = '0';
---		Control <= "010000";
---		Operand1 <= X"FFFFFFFC";
---		Operand2 <= X"00000003";
---		
---		wait until Status(2) = '0';
---		Control <= "010000";
---		Operand1 <= X"FFFFFFFC";
---		Operand2 <= X"FFFFFFFE";
+wait for 100 ns;	
+		Control <= "000101";
+		Operand1 <= X"FFFFFFFF";
+		Operand2 <= X"0000001F";
 		
-		wait for 100 ns	;	
-		Control <= "010011";
-		Operand1 <= X"0000000B";
+		wait for 100 ns;	
+		Control <= "001101";
+		Operand1 <= X"FFFFFFFF";
+		Operand2 <= X"0000001F";
+		
+		wait for 100 ns;	
+		Control <= "001001";
+		Operand1 <= X"80000000";
+		Operand2 <= X"0000000F";
+		
+		wait for 100 ns;	
+		Control <= "001001";
+		Operand1 <= X"80000000";
+		Operand2 <= X"0000001F";
+		
+		wait for 100 ns;
+		Control <= "001110";
+		Operand1 <= X"FFFFFFFF";
+		Operand2 <= X"FFFFFFFF";
+		
+		wait for 100 ns;
+		Control <= "001110";
+		Operand1 <= X"FFFFFFFE";
+		Operand2 <= X"FFFFFFFF";
+		
+		wait for 100 ns;
+		Control <= "001110";
+		Operand1 <= X"FFFFFFFF";
+		Operand2 <= X"FFFFFFFE";
+		
+		wait for 100 ns;
+		Control <= "000111";
+		Operand1 <= X"FFFFFFFF";
+		Operand2 <= X"FFFFFFFF";
+		
+		wait for 100 ns;
+		Control <= "000111";
+		Operand1 <= X"FFFFFFFE";
+		Operand2 <= X"FFFFFFFF";
+		
+		wait for 100 ns;
+		Control <= "000111";
+		Operand1 <= X"FFFFFFFF";
+		Operand2 <= X"FFFFFFFE";
+		
+		wait for 100 ns;
+		Control <= "000111";
+		Operand1 <= X"00000001";
+		Operand2 <= X"00000000";
+		
+		wait for 100 ns;
+		Control <= "000111";
+		Operand1 <= X"00000000";
+		Operand2 <= X"00000000";
+		
+		wait for 100 ns;
+		Control <= "000111";
+		Operand1 <= X"00000000";
+		Operand2 <= X"00000001";
+		
+		wait for 100 ns;
+		Control <= "000111";
+		Operand1 <= X"FFFFFFFF";
+		Operand2 <= X"00000000";
+		
+		wait for 100 ns;
+		Control <= "000111";
+		Operand1 <= X"00000000";
+		Operand2 <= X"FFFFFFFF";
+		
+		wait for 100 ns;
+		Control <= "010000";
+		Operand1 <= X"00000002";
+		Operand2 <= X"00000003";
+		
+		wait until Status(2) = '0';
+		Control <= "010000";
+		Operand1 <= X"FFFFFFFC";
+		Operand2 <= X"00000003";
+		
+		wait until Status(2) = '0';
+		Control <= "010000";
+		Operand1 <= X"FFFFFFFC";
+		Operand2 <= X"FFFFFFFE";
+		
+		wait until Status(2) = '0';	
+		Control <= "010010";
+		Operand1 <= X"FFFFFFF5";
 		Operand2 <= X"00000002";
 		
---		wait until Status(2) = '0';
---		Control <= "010001";
---		Operand1 <= X"FFFFFFFF";
---		Operand2 <= X"FFFFFFFF";
---		
---		wait until Status(2) = '0';
---		Control <= "010001";
---		Operand1 <= X"0FFFFFFF";
---		Operand2 <= X"FFFFFFFF";
---		
---		wait until Status(2) = '0';	
---		Control <= "000100";
---		Operand1 <= X"fefefefe";
---		Operand2 <= X"1111ffff";
-      -- insert stimulus here 
+		wait until Status(2) = '0';
+		Control <= "010001";
+		Operand1 <= X"FFFFFFFF";
+		Operand2 <= X"FFFFFFFF";
+		
+		wait until Status(2) = '0';
+		Control <= "010001";
+		Operand1 <= X"0FFFFFFF";
+		Operand2 <= X"FFFFFFFF";
+		
+		wait until Status(2) = '0';	
+		Control <= "000100";
+		Operand1 <= X"fefefefe";
+		Operand2 <= X"1111ffff";
 
       wait;
    end process;
