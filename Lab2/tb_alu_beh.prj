@@ -1,0 +1,2 @@
+vhdl work "../src/alu.vhd"
+vhdl work "../src/tb_alu.vhd"

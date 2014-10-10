@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "D:/GitHub/CG3207-Lab-2/Lab2/tb_alu_isim_beh.exe" -prj "D:/GitHub/CG3207-Lab-2/Lab2/tb_alu_beh.prj" "work.tb_alu" 
